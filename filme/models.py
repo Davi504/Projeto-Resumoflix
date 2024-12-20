@@ -6,4 +6,3 @@ from django.db import models
 
 # criar os episodios
 
-# criar o usuario
