@@ -55,7 +55,7 @@ ROOT_URLCONF = 'netflix.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'], # Adicionado para o Django encontrar os templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
