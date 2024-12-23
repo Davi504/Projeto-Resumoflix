@@ -25,3 +25,13 @@ class Filme(models.Model):
     
 # criar os episodios
 
+class Episodio(models.Model):
+    filme = models.ForeignKey("Filme", related_name="episodios", on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=100)
+    video = models.URLField(default='http://default.url')  # Defina um valor padrão para URLs
+
+
+
+    def __str__(self):
+        return self.titulo
+
