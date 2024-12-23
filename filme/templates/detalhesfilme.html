@@ -10,5 +10,15 @@ HomeFilmes Netflix
     <P>{{object}}</P>
     <p>{{object.descricao}}</p>
     <img src="{{object.thumb.url}}" alt="">
+
+    <h2>Episódios</h2>
+    <ul>
+        {% for episodio in object.episodios.all %}
+            
+            <a href="{{episodio.video}}">
+                <li><p>Episodio {{forloop.counter}}: {{episodio.titulo}}</li>
+                </a></p>
+        {% endfor %}
+        </ul>
 </div>
 {% endblock %}
