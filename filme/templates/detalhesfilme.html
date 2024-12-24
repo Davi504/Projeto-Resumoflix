@@ -21,4 +21,12 @@ HomeFilmes Netflix
         {% endfor %}
         </ul>
 </div>
+<div class = "py-10">
+    <h2>Outros filmes que você pode gostar</h2>
+    {% for filme in filmes_relacionados %}
+    <p>
+    <a href="{% url 'filme:detalhesfilme' filme.id %}">{{filme.titulo}}</a>
+    </p>
+    {% endfor %}
+</div>
 {% endblock %}
