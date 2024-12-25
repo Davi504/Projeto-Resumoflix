@@ -19,6 +19,13 @@ class DetalhesFilme(DetailView):
     model = Filme
     # object --- 1 item do modelo
 
+    def get(self, request, *args, **kwargs):
+        # Incrementar o número de visualizações
+        Filme = self.get_object()
+        Filme.visualizacoes += 1
+        Filme.save()
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super(DetailView, self).get_context_data(**kwargs)
         filmes_relacionados = Filme.objects.filter(categoria=self.get_object().categoria)[0:3]
