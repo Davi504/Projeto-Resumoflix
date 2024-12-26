@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Filme
 from django.views.generic import TemplateView, ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -9,12 +10,12 @@ class Homepage(TemplateView):
 
 
 
-class Homefilmes(ListView):
+class Homefilmes(LoginRequiredMixin, ListView):
     template_name = "homefilmes.html"
     model = Filme
     # object_list --- lista de itens do modelo
 
-class DetalhesFilme(DetailView):
+class DetalhesFilme(LoginRequiredMixin, DetailView):
     template_name = "detalhesfilme.html"
     model = Filme
     # object --- 1 item do modelo
@@ -24,6 +25,9 @@ class DetalhesFilme(DetailView):
         Filme = self.get_object()
         Filme.visualizacoes += 1
         Filme.save()
+        usuario = request.user
+        usuario.filmes_vistos.add(Filme)
+        
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -32,7 +36,7 @@ class DetalhesFilme(DetailView):
         context["filmes_relacionados"] = filmes_relacionados
         return context
     
-class PesquisaFilme(ListView):
+class PesquisaFilme(LoginRequiredMixin, ListView):
     template_name = "pesquisa.html"
     model = Filme
 
