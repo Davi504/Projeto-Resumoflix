@@ -1,19 +1,35 @@
 from django.shortcuts import render, redirect, reverse 
-from .models import Filme
-from .forms import CriarContaForm
+from .models import Filme, Usuario
+from .forms import CriarContaForm, FormHomepage
 from django.views.generic import TemplateView, ListView, DetailView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
-class Homepage(TemplateView):
+class Homepage(FormView):
     template_name = "homepage.html"
+    form_class = FormHomepage
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect("filme:homefilmes")
         else:
             return super().get(request, *args, **kwargs) #redirecionando pra homepage
+
+    def get_success_url(self):
+        email = self.request.POST.get("email")
+        usuarios = Usuario.objects.filter(email=email)
+        if usuarios :
+            return reverse("filme:login")
+        else: 
+            return reverse("filme:criarconta")
+        
+        return
+
+
+
+
+
 
 class Homefilmes(LoginRequiredMixin, ListView):
     template_name = "homefilmes.html"
