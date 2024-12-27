@@ -1,34 +1,45 @@
 {% load static %}
 <!--<img src="{% static 'my_app/example.jpg' %}" alt="My image"> -->
 
-
-<nav class= "w-full flex justify-between items-center py-3 px-4 fixed z-50" >
-  <div class = "w-6/12">
+<nav class="w-full flex justify-between items-center py-3 px-4 fixed z-50">
+  <div class="w-4/12">
     <a href="/">
-      <img class = "w-4/12", src="{% static 'images/resumoflix.png' %}", alt="logo">
+      <img class="w-4/12" src="{% static 'images/resumoflix.png' %}" alt="logo">
     </a>
   </div>
-
-  <div class = "w-6/12 flex flex-nowrap justify-end">
-    <div class = "mr-2">
-      <form method="get" action="{% url 'filme:pesquisafilme' %}">
-        <input type="text" class = "py-1 px-2 rounded-md text-black" name="query"  value="{{request.GET.query}}" placeholder="pesquisar">
-        <input type="submit" value="">
-      </form>
+  <div class="w-6/12 flex flex-nowrap justify-end">
+    {% if user.is_authenticated %}
+      <div class="mr-2">
+        <form method="get" action="{% url 'filme:pesquisafilme' %}">
+          <input type="text" class="py-1 px-2 rounded-md text-black" name="query" value="{{ request.GET.query }}" placeholder="pesquisar">
+          <input type="submit" value="">
+        </form>
+      </div>
+    {% endif %}
+    <div class="mr-2">
+      {% if user.is_authenticated %}
+        <form id="logout-form" action="{% url 'filme:logout' %}" method="post" style="display: inline;">
+          {% csrf_token %}
+          <button class="bg-red-600 text-white py-1 px-3 rounded-md">
+            Sair
+          </button>
+        </form>
+      {% else %}
+        <a href="{% url 'filme:login' %}">
+          <button class="bg-red-600 text-white py-1 px-3 rounded-md left-0">
+            Login
+          </button>
+        </a>
+      {% endif %}
     </div>
-    <div class = "mr-2">
-      <a href=""> 
-        <button class = "bg-red-600 text-white py-1 px-3 rounded-md">
-        Login
-      </button> 
-      </a>
-    </div>
-    <div class = "mr-2">
-      <a href=""> 
-        <button class = "bg-red-600 text white py-1 px-3 rounded-md">
-        Editar Perfil
-      </button> 
-      </a>
+    <div class="mr-2">
+      {% if user.is_authenticated %}
+        <a href="{% url 'filme:editarperfil' %}">
+          <button class="bg-red-600 text-white py-1 px-3 rounded-md">
+            Editar Perfil
+          </button>
+        </a>
+      {% endif %}
     </div>
   </div>
 </nav>

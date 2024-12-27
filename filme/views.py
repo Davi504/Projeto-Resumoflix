@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Filme
 from django.views.generic import TemplateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,7 +8,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 class Homepage(TemplateView):
     template_name = "homepage.html"
 
-
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect("filme:homefilmes")
+        else:
+            return super().get(request, *args, **kwargs) #redirecionando pra homepage
 
 class Homefilmes(LoginRequiredMixin, ListView):
     template_name = "homefilmes.html"
@@ -49,6 +53,12 @@ class PesquisaFilme(LoginRequiredMixin, ListView):
             return None
     
 
+class PaginaPerfil(LoginRequiredMixin, TemplateView):
+    template_name = "editarperfil.html"
+
+
+class CriarConta(TemplateView):
+    template_name = "criarconta.html"
 
 
 # def homefilmes(request):
