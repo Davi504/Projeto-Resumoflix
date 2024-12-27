@@ -37,8 +37,8 @@ O desenvolvimento do Resumoflix foi uma jornada abrangente que envolveu várias 
 
 ### Copie o repositorio
 ```sh
-    git clone https://github.com/Davi504/Projeto-netflix.git
-    cd Projeto-netflix
+    git clone https://github.com/Davi504/Projeto-Resumoflix.git
+    cd Projeto-Resumoflix
 
 ```
 ### Crie um ambiente virtual
