@@ -19,6 +19,28 @@ O desenvolvimento do Resumoflix foi uma jornada abrangente que envolveu várias 
 
 - JavaScript: Empregado para adicionar interatividade e melhorar a experiência do usuário.
 
+## Problemas e Soluções
+
+### Problemas
+
+- Criação do Carrossel: Durante a implementação do carrossel, surgiram dificuldades em garantir sua responsividade e funcionamento adequado em diferentes dispositivos.
+
+- Usuário Personalizado: A falta de definição de um modelo de usuário personalizado no início do projeto resultou na necessidade de refazer o banco de dados posteriormente.
+
+- Organização dos Elementos na Tela: Houve desafios na organização dos elementos na tela para assegurar uma interface limpa e intuitiva para os usuários.
+
+- Autenticação e Segurança: Embora a autenticação e segurança tenham sido tranquilas devido às funcionalidades fornecidas pelo Django, algumas personalizações adicionais foram necessárias para atender requisitos específicos.
+
+### Soluções
+
+- Carrossel Responsivo: A solução envolveu o uso de frameworks CSS como Bootstrap e Tailwind CSS para criar um carrossel responsivo e funcional em todos os dispositivos.
+
+- Modelo de Usuário Personalizado: A implementação do modelo de usuário personalizado exigiu a migração dos dados e a redefinição das relações no banco de dados. Isso foi feito utilizando comandos de migração do Django para minimizar o impacto.
+
+- Layout e Design: O uso de Tailwind CSS junto com práticas de design responsivo ajudou na organização dos elementos da tela, proporcionando uma experiência de usuário mais agradável e intuitiva.
+
+- Personalização da Autenticação: Adicionamos algumas personalizações à autenticação básica do Django para atender às necessidades do projeto, garantindo segurança e facilidade de uso.
+
 ## Funcionalidades Principais:
 
 - Autenticação de Usuários: Sistema de cadastro e login para permitir que os usuários acessem a plataforma.
@@ -75,6 +97,6 @@ O desenvolvimento do Resumoflix foi uma jornada abrangente que envolveu várias 
 ### Acesse a aplicação: Abra um navegador e vá para
 `http://localhost:8000`
 
-## Licensa
+## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
