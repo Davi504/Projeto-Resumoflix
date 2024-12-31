@@ -54,6 +54,38 @@ O desenvolvimento do Resumoflix foi uma jornada abrangente que envolveu várias 
 ## Como Rodar o Projeto na Sua Máquina
 
 ### Copie o repositório
+
 ```sh
 git clone https://github.com/Davi504/Projeto-Resumoflix.git
 cd Projeto-Resumoflix
+```
+
+### Crie um ambiente virtual
+```sh
+python -m venv venv
+source venv/bin/activate  # No Windows use `venv\Scripts\activate`
+```
+### Instale as dependências
+```sh
+pip install -r requirements.txt
+```
+### Realize as migrações do banco de dados
+```sh
+python manage.py make migrations # python manage.py migrate
+```
+
+### Crie um super usuário
+```sh
+python manage.py createsuperuser
+```
+
+### Inicie o servidor
+```sh
+python manage.py runserver
+```
+
+### Acesse a aplicação
+`Abra um navegador e vá para http://localhost:8000.`
+
+## Licença
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
