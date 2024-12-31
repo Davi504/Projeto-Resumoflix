@@ -71,7 +71,10 @@ pip install -r requirements.txt
 ```
 ### Realize as migrações do banco de dados
 ```sh
-python manage.py make migrations # python manage.py migrate
+python manage.py make migrations
+```
+```sh
+python manage.py migrate
 ```
 
 ### Crie um super usuário
