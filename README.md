@@ -3,6 +3,11 @@
 ## Descrição
 Resumoflix é uma plataforma inovadora de streaming onde os usuários podem visualizar resumos de filmes e séries por meio de vídeos embebidos do YouTube. A plataforma foi projetada para fornecer uma experiência amigável e envolvente, permitindo que os administradores cadastrem filmes e séries, enquanto os usuários podem navegar e assistir a resumos desses conteúdos.
 
+## Video da Aplicação Rodando
+
+[Link do video](https://youtu.be/RMMt8hOxD0A?si=xTpQNP9nL_b3aGR1)
+
+
 ### Objetivo
 O principal objetivo deste projeto é criar uma plataforma onde os usuários possam facilmente acessar resumos de filmes e séries, ajudando-os a decidir o que assistir de maneira prática e intuitiva.
 
