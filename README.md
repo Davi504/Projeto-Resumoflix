@@ -12,8 +12,7 @@ O projeto é destinado a todos os entusiastas de filmes e séries que desejam um
 ### Futuras Melhorias
 - Adicionar funcionalidade de recomendação baseada nos interesses do usuário.
 - Implementar comentários e avaliações de usuários para cada vídeo.
-- Integrar com outras plataformas de streaming para fornecer opções de onde assistir aos filmes e séries completos.
-- Melhorar a interface de usuário com design mais interativo e moderno.
+- implementar sistema de filtragem por categorias
 
 ## Desenvolvimento
 O desenvolvimento do Resumoflix foi uma jornada abrangente que envolveu várias etapas, tecnologias e práticas para construir uma plataforma de streaming funcional e robusta. Aqui está uma visão detalhada do processo de desenvolvimento:
